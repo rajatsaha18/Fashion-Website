@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/New folder/css/all.css') }}">
 </head>
+
 <body>
 
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
@@ -35,7 +37,10 @@
                         <li><a href="" class="dropdown-item">Manage Contact</a></li>
                     </ul>
                 </li>
-                <li><a href="" class="nav-link">Logout</a></li>
+                <li><a href="" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Logout</a></li>
+                <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                    @csrf
+                </form>
             </ul>
         </div>
     </nav>
@@ -45,4 +50,5 @@
     <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 
 </body>
+
 </html>

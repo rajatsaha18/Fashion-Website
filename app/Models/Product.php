@@ -36,6 +36,39 @@ class Product extends Model
         self::$product->save();
     }
 
+    public static function updateProduct($request, $id){
+        self::$product = Product::find($id);
+        if($request->file('image')){
+            if(file_exists(self::$product->image))
+            {
+                unlink(self::$product->image);
+            }
+            self::$imageUrl = self::getImageUrl($request->file('image'));
+        }
+        else{
+            self::$imageUrl = self::$product->image;
+        }
+        self::$product->category_id         = $request->category_id;
+        self::$product->name                = $request->name;
+        self::$product->code                = $request->code;
+        self::$product->regular_price       = $request->regular_price;
+        self::$product->selling_price       = $request->selling_price;
+        self::$product->stock_amount        = $request->stock_amount;
+        self::$product->description         = $request->description;
+        self::$product->image               = self::$imageUrl;
+        self::$product->status              = $request->status;
+        self::$product->save();
+    }
+
+    public static function deleteProduct($id){
+        self::$product = Product::find($id);
+        if(file_exists(self::$product->image))
+        {
+            unlink(self::$product->image);
+        }
+        self::$product->delete();
+    }
+
     public function category(){
         return $this->belongsTo(Category::class);
     }

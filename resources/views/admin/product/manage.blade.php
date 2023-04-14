@@ -9,6 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h4 class="text-center text-success">{{ Session::get('message') }}</h4>
                     <h5 class="text-center">All Product Info</h5>
                     <table class="table table-bordered">
                         <thead>
@@ -34,10 +35,13 @@
                                     <td><img src="{{ $product->image }}" alt="" height="70" width="70"/></td>
                                     <td>{{ $product->status == 1 ? 'published' : 'unpublished' }}</td>
                                     <td>
+                                        <a href="{{ route('detail.product', ['id' => $product->id]) }}" class="btn btn-info btn-sm">
+                                            <i class="fa fa-book"></i>
+                                        </a>
                                         <a href="{{ route('edit.product', ['id' => $product->id]) }}" class="btn btn-success btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="" class="btn btn-danger btn-sm">
+                                        <a href="{{ route('delete.product', ['id' => $product->id]) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete this')">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>

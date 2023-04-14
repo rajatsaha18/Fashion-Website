@@ -14,6 +14,9 @@ class CategoryController extends Controller
         return view('admin.category.index');
     }
     public function create(Request $request){
+        $request->validate([
+            'name' => 'required',
+        ]);
         $this->category = Category::newCategory($request);
         return redirect('/manage-category')->with('message','Create Category Successfully');
 

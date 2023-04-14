@@ -17,7 +17,9 @@
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Category Name</label>
                                 <div class="col-sm-10 mt-2">
                                     <input type="text" name="name" class="form-control" id="inputEmail3">
+                                    <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
                                 </div>
+
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Description</label>
