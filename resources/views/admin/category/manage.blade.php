@@ -29,8 +29,12 @@ Admin | Manage Category
                             <td><img src="{{ asset($category->image) }}" alt="" height="70" width="70"></td>
                             <td>{{ $category->status == 1 ? 'published' : 'unpublished'}}</td>
                             <td>
-                                <a href="{{ route('edit.category',['id' => $category->id]) }}" class="btn btn-success btn-sm">Edit</a>
-                                <a href="{{ route('delete.category',['id' => $category->id]) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this')">Delete</a>
+                                <a href="{{ route('edit.category',['id' => $category->id]) }}" class="btn btn-success btn-sm">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="{{ route('delete.category',['id' => $category->id]) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
