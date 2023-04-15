@@ -34,7 +34,11 @@ class ProductController extends Controller
     }
     public function manage(){
         $this->products = Product::all();
-        return view('admin.product.manage',['products' => $this->products]);
+        $this->products = Product::orderBy('category_id')->paginate(3);
+        return view('admin.product.manage',[
+            'products' => $this->products,
+
+        ]);
     }
 
     public function detailProduct($id)

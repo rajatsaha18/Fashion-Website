@@ -8,7 +8,7 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mx-auto">
                     <h4 class="text-center text-success">{{ Session::get('message') }}</h4>
                     <h5 class="text-center">All Product Info</h5>
                     <table class="table table-bordered">
@@ -50,6 +50,15 @@
 
                         </tbody>
                     </table>
+                    <section class="py-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 mx-auto">
+                                    {{ $products->links() }}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
