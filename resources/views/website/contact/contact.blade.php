@@ -19,16 +19,19 @@ Contact
                                 <label for="">Full Name</label>
                                 <input type="text" class="form-control" name="name"
                                     placeholder="Rajat Saha" />
+                                <span class="text-white">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
                             </div>
                             <div class="form-group">
                                 <label for="">Email</label>
                                 <input type="email" class="form-control" name="email"
                                     placeholder="rajat@gmail.com" />
+                                <span class="text-white">{{ $errors->has('email') ? $errors->first('email') : '' }}</span>
                             </div>
                             <div class="form-group">
                                 <label for="">Mobile</label>
                                 <input type="number" class="form-control" name="mobile"
                                     placeholder="01717440651" />
+                                <span class="text-white">{{ $errors->has('mobile') ? $errors->first('mobile') : '' }}</span>
                             </div>
                             <div class="form-group">
                                 <label for="">Address</label>

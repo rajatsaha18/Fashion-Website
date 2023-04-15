@@ -51,6 +51,11 @@ class HomeController extends Controller
     }
 
     public function createContact(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
+        ]);
         Contact::newContact($request);
         return redirect()->back()->with('message', 'your message send successfully');
     }

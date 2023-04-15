@@ -36,7 +36,7 @@
                                         <a href="mailto:{{ $contact->email }}" target="blank" class="btn btn-info btn-sm">
                                             <i class="fa-solid fa-envelope"></i>
                                         </a>
-                                        <a href="" class="btn btn-danger btn-sm">
+                                        <a href="{{ route('delete.contact',['id' => $contact->id]) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are You sure delete this')">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>

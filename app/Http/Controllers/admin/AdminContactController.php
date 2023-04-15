@@ -15,4 +15,10 @@ class AdminContactController extends Controller
             'contactInfo' => $this->contactInfo,
         ]);
     }
+
+    public function delete($id){
+        Contact::deleteContact($id);
+        return redirect()->back()->with('message', 'Delete Contact');
+
+    }
 }

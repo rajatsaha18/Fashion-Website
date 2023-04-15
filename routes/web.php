@@ -45,5 +45,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/delete-product/{id}', [ProductController::class,'delete'])->name('delete.product');
 
     Route::get('/user-contact', [AdminContactController::class,'index'])->name('manage.contact');
+    Route::get('/delete-contact/{id}', [AdminContactController::class,'delete'])->name('delete.contact');
 });
 
