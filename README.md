@@ -11,11 +11,12 @@
 ![Screenshot (50)](https://user-images.githubusercontent.com/85999223/232210335-e2d5ba97-b032-4d3f-8ae2-184e4d36d750.png)
 
 #Category Wise Product
-![Screenshot (51)](https://user-images.githubusercontent.com/85999223/232210340-c5207442-2d51-430b-875a-094aea4e1915.png)
+![Screenshot (64)](https://user-images.githubusercontent.com/85999223/232213417-5493022b-ee35-4fb7-a277-3ff65def848d.png)
 
-![Screenshot (52)](https://user-images.githubusercontent.com/85999223/232210346-cf9b3bd1-93eb-4202-a2d7-52d2951c732b.png)
+![Screenshot (65)](https://user-images.githubusercontent.com/85999223/232213449-c4d631b4-1097-4dd0-8d6e-a12502e34346.png)
 
-![Screenshot (53)](https://user-images.githubusercontent.com/85999223/232210348-ac02a5a5-512f-4f75-8827-7c7b45976fab.png)
+![Screenshot (66)](https://user-images.githubusercontent.com/85999223/232213457-14f12896-b094-4546-8682-a16e4e1d1da8.png)
+
 
 ![Screenshot (54)](https://user-images.githubusercontent.com/85999223/232210351-93042c70-eb4e-4b6a-b242-a54f6cc7c068.png)
 
