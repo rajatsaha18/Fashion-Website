@@ -8,11 +8,12 @@ Contact
 <section class="py-5 bg-secondary">
     <div class="container">
         <div class="row">
+            <h4 class="text-center text-info">{{ Session::get('message') }}</h4>
             <h3 class="text-warning text-center">Contact Form</h3>
             <div class="col-md-4 mx-auto">
                 <div class="card bg-danger">
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="{{ route('new.contact') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="">Full Name</label>

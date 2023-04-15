@@ -45,9 +45,9 @@
             <h1 class="text-center mb-3">Our Products</h1>
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-md-3">
+                    <div class="col-md-3 mt-3">
                         <div class="card">
-                            <img src="{{ asset($product->image) }}" alt="" class="card-img-top w-100" />
+                            <img src="{{ asset($product->image) }}" alt="" class="card-img-top h-250"/>
                             <div class="card-body">
                                 <h5>{{ $product->name }}</h5>
                                 <h5>TK.{{ $product->selling_price }}</h5>

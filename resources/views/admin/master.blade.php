@@ -34,7 +34,7 @@
                 <li class="dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact</a>
                     <ul class="dropdown-menu">
-                        <li><a href="" class="dropdown-item">Manage Contact</a></li>
+                        <li><a href="{{ route('manage.contact') }}" class="dropdown-item">Manage Contact</a></li>
                     </ul>
                 </li>
                 <li><a href="" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">Logout</a></li>

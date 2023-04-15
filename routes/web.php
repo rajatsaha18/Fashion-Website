@@ -5,6 +5,7 @@ use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\AdminContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,11 @@ use App\Http\Controllers\admin\ProductController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/category/{id}', [HomeController::class, 'category'])->name('category');
+Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/new-contact', [HomeController::class, 'createContact'])->name('new.contact');
 Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
@@ -39,5 +43,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/edit-product/{id}', [ProductController::class,'edit'])->name('edit.product');
     Route::post('/update-product/{id}', [ProductController::class,'update'])->name('update.product');
     Route::get('/delete-product/{id}', [ProductController::class,'delete'])->name('delete.product');
+
+    Route::get('/user-contact', [AdminContactController::class,'index'])->name('manage.contact');
 });
 

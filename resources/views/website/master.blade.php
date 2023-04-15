@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -21,9 +22,8 @@
                     <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Product</a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a href="" class="dropdown-item">{{ $category->name }}</a></li>
+                            <li><a href="{{ route('category',['id' => $category->id]) }}" class="dropdown-item">{{ $category->name }}</a></li>
                         @endforeach
-
                     </ul>
                 </li>
                 <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
