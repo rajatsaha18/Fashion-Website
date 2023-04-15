@@ -10,15 +10,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $categories;
     private $category;
     private $products;
     private $product;
-    private $user;
+
     public function index(){
 
         $this->products = Product::orderBy('id', 'desc')->get();
         return view('website.home.home',[
+
             'products'      => $this->products,
         ]);
     }
@@ -51,11 +51,13 @@ class HomeController extends Controller
     }
 
     public function createContact(Request $request){
+
         $request->validate([
             'name' => 'required',
             'email' => 'required',
             'mobile' => 'required',
         ]);
+
         Contact::newContact($request);
         return redirect()->back()->with('message', 'your message send successfully');
     }

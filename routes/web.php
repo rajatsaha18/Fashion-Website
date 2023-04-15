@@ -18,6 +18,8 @@ use App\Http\Controllers\admin\AdminContactController;
 |
 */
 
+
+// ========= Website Route Start===========
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/category/{id}', [HomeController::class, 'category'])->name('category');
 Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail');
@@ -25,17 +27,21 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/new-contact', [HomeController::class, 'createContact'])->name('new.contact');
 Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
+// ========== Website Route End ===========
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 
+    // ====== Category Route Start ======
     Route::get('/add-category', [CategoryController::class,'index'])->name('add.category');
     Route::post('/new-category', [CategoryController::class,'create'])->name('new.category');
     Route::get('/manage-category', [CategoryController::class,'manage'])->name('manage.category');
     Route::get('/edit-category/{id}', [CategoryController::class,'edit'])->name('edit.category');
     Route::post('/update-category/{id}', [CategoryController::class,'update'])->name('update.category');
     Route::get('/delete-category/{id}', [CategoryController::class,'delete'])->name('delete.category');
+  // ========== Category Route End ===========
 
+  // ========== Product Route Start ===========
     Route::get('/add-product', [ProductController::class,'index'])->name('index.product');
     Route::post('/new-product', [ProductController::class,'create'])->name('new.product');
     Route::get('/manage-product', [ProductController::class,'manage'])->name('manage.product');
@@ -43,8 +49,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/edit-product/{id}', [ProductController::class,'edit'])->name('edit.product');
     Route::post('/update-product/{id}', [ProductController::class,'update'])->name('update.product');
     Route::get('/delete-product/{id}', [ProductController::class,'delete'])->name('delete.product');
+    // ========== Product Route End ===========
 
+    // ========== Contact Route Start ===========
     Route::get('/user-contact', [AdminContactController::class,'index'])->name('manage.contact');
     Route::get('/delete-contact/{id}', [AdminContactController::class,'delete'])->name('delete.contact');
+    // ========== Contact Route End ===========
 });
 

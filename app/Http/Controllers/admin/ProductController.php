@@ -13,11 +13,13 @@ class ProductController extends Controller
     private $category;
     private $product;
     private $products;
+
     public function index(){
         $this->categories = Category::all();
         return view('admin.product.index',['categories' => $this->categories]);
     }
 
+    // ===========create New Product==============
     public function create(Request $request){
         $request->validate([
             'category_id'   => 'required',
@@ -32,6 +34,7 @@ class ProductController extends Controller
         $this->product = Product::newProduct($request);
         return redirect('/manage-product')->with('message', 'Create Product Successfully');
     }
+
     public function manage(){
         $this->products = Product::all();
         $this->products = Product::orderBy('category_id')->paginate(3);
@@ -47,6 +50,7 @@ class ProductController extends Controller
         return view('admin.product.detail',['product' => $this->product]);
     }
 
+// =================Edit Product =================
     public function edit($id){
         $this->product = Product::find($id);
         $this->categories = Category::all();
@@ -56,6 +60,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // ============= Update Product =============
     public function update(Request $request, $id){
         Product::updateProduct($request, $id);
         return redirect('/manage-product')->with('message', 'Update Product Successfully');
